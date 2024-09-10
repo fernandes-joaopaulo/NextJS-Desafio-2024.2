@@ -10,3 +10,9 @@ export type IndividualProducts = {
     price?: string;
     image?: string;
 } | null;
+
+export type Card = {
+    id:number;
+    title: string;
+    content: string;
+};

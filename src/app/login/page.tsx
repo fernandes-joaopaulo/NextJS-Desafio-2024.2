@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 export default function Login()
 {
     return(
@@ -14,7 +16,9 @@ export default function Login()
                         <input type="password" className="rounded-md shadow-md p-2"/>
                     </div>
                     <div className="flex flex-col text-left gap-2">
-                        <input type="submit" value={"Login"} className="text-white font-bold text-xl rounded-md shadow-md bg-amarelo px-8 py-4"/>
+                        <Link href={'/admin'} className="text-white font-bold text-xl rounded-md shadow-md bg-amarelo px-8 py-4">
+                            Login
+                        </Link>
                     </div>
                 </div>
             </div>
