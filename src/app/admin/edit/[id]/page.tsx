@@ -11,7 +11,7 @@ export default async function Page({params}: {params: {id: string}}) {
     <>
            <div className=" items-center justify-center h-screen w-screen pt-40">
             <form action={updateProdutoWithId} className="mx-auto my-auto w-full gap-10 text-center flex flex-col items-center justify-center">
-                <h1 className=" font-bold text-2xl xl:text-3xl 2xl:text-4xl">Novo produto</h1>
+                <h1 className=" font-bold text-2xl xl:text-3xl 2xl:text-4xl">Editar produto</h1>
                 <div className="bg-azul w-10/12 border border-black flex flex-col gap-10 p-10 rounded-xl">
                     <div className="flex flex-col text-left gap-2">
                         <label className="font-semibold text-sm xl:text-xl">Nome</label>
