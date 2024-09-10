@@ -16,3 +16,15 @@ export default async function getProdutos(){
 
     return produtos;
 }
+
+export async function getCards(){
+    const cards = await prisma.card.findMany({
+        select: {
+            id: true,
+            title: true,
+            content: true,
+        }
+    })
+
+    return cards;
+}

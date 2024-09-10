@@ -1,8 +1,10 @@
- import Image from "next/image"
- import imagem from "../../assets/img/foto-contato.jpg";
+import Image from "next/image"
+import imagem from "../../assets/img/foto-contato.jpg";
+import { getCards } from "../../../actions/home/actions";
 
  export default function About()
  {
+
     return(
         <>
         <div className="flex flex-wrap w-full gap-10 p-10 items-center justify-center">

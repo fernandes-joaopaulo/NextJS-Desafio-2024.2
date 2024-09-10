@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { deleteProduto } from "../../../actions/admin/actions";
 
 export default function EditButton({ id }: { id: number | undefined }) {
   return (
@@ -16,8 +17,8 @@ export default function EditButton({ id }: { id: number | undefined }) {
 
 export function DeleteButton({ id }: { id: number | undefined }) {
   return (
-    <button className="bg-vermelho rounded-md text-white p-2 font-bold max-h-10">
-      Excluir
+    <button onClick={() => deleteProduto(id)} className="bg-vermelho rounded-md text-white p-2 font-bold max-h-10">
+        Excluir
     </button>
   );
 }

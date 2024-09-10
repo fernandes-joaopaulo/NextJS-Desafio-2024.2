@@ -25,6 +25,7 @@ export async function deleteProduto(id:number | undefined) {
     await prisma.product.delete({
         where: {id}
     })
+    redirect('/admin')
 }
 
 export async function createProduto(formData: FormData) {
@@ -46,7 +47,7 @@ export async function createProduto(formData: FormData) {
 }
 
 export async function updateProduto(id:number, formData: FormData){
-    const title = formData.get("name") as string;
+    const title = formData.get("title") as string;
     const price = formData.get("price") as string;
     const description = formData.get('desc') as string;
     const image = formData.get('image') as string;

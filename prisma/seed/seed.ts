@@ -1,4 +1,3 @@
-import { image } from '@nextui-org/react';
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
@@ -181,13 +180,6 @@ async function main() {
       image: 'https://res.cloudinary.com/dvxfzsqlz/image/upload/v1725912208/products/m7ksawlyrqhgeqsdbep6.png'
     },
     {
-      title: 'Ração para Hamster NutriHamster',
-      description: 'NUTRIHAMSTER é uma ração completa e balanceada para hamsters, com todos os nutrientes necessários para a saúde e bem-estar do seu pet.',
-      price: 'R$ 19.99',
-      createdAt: new Date(),
-      image: 'https://res.cloudinary.com/dvxfzsqlz/image/upload/v1725912208/products/m7ksawlyrqhgeqsdbep6.png'
-    },
-    {
       title: 'Coleira de Identificação Personalizada',
       description: 'A coleira de identificação personalizada garante que seu pet seja facilmente reconhecido, com gravação do nome e telefone de contato.',
       price: 'R$ 49.90',
@@ -217,6 +209,29 @@ async function main() {
       data: product,
     });
   }
+
+  const cards = [
+    {
+      title: 'Missão',
+      content: 'Nossa missão é promover saúde e bem estar para o seu animal.',
+    },
+    {
+      title: 'Visão',
+      content: 'Revolucionar o mercado agroper e ser líder em vendas de produtos pets na América Latina.',
+    },
+    {
+      title: 'Valores',
+      content: 'Bem-estar animal, respeito, amor e confiança.',
+    },
+  ];
+
+  for (const card of cards) {
+    await prisma.card.create({
+      data: card,
+    });
+  }
+  
+
 }
 
 main()

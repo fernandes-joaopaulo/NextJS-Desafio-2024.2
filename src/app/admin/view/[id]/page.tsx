@@ -1,7 +1,6 @@
 import React from "react";
 import { fetchProductById } from "../../../../../actions/individualProduct/actions";
-import { deleteProduto } from "../../../../../actions/admin/actions";
-import EditButton from "@/components/buttons";
+import Link from "next/link";
 
 export default async function Page({params}: {params: {id: string}}) {
 
@@ -24,11 +23,20 @@ export default async function Page({params}: {params: {id: string}}) {
                         <input type="text" value={produto?.price} className="rounded-md shadow-md p-2 w-10/12"/>
                     </div>
                     <div className="flex flex-col text-left gap-2">
+                        <label className="font-semibold text-sm xl:text-xl" >URL da imagem</label>
+                        <input type="text" value={produto?.image} className="rounded-md shadow-md p-2 w-10/12"/>
+                    </div>
+                    <div className="flex flex-col text-left gap-2">
                         <label className="font-semibold text-sm xl:text-xl" >Descrição</label>
                         <textarea value={produto?.description} className="rounded-md shadow-md p-2 w-10/12"/>
                     </div>
-                    <EditButton id={produto?.id}/>
-
+                    <Link href={`/admin/edit/${id}`}>
+                    <div className="flex flex-col text-left gap-2">
+                        <button className="text-white font-bold text-xl rounded-md shadow-md bg-amarelo px-8 py-4">
+                        Editar
+                        </button>
+                    </div>
+                    </Link>
                 </div>
 
             </form>

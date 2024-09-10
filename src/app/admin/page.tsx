@@ -3,12 +3,12 @@
 import React from "react";
 import Link from "next/link";
 import { FaPlusCircle } from "react-icons/fa";
-import fetchProdutos from "../../../actions/admin/actions";
+import fetchProdutos, { deleteProduto } from "../../../actions/admin/actions";
 import { DeleteButton } from "@/components/buttons";
 
 export default async function Admin() {
 
-  const {produtos, count} = await fetchProdutos();
+  const {produtos} = await fetchProdutos();
 
   return (
     <>
@@ -34,9 +34,8 @@ export default async function Admin() {
                   >
                     Visualizar
                   </Link>
-                  <DeleteButton id={produto?.id}/>
+                  <DeleteButton id={produto.id}/>
                 </div>
-                
               </div>             
             ))}
 
